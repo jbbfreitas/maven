@@ -158,4 +158,4 @@ Como é improvável que você queira distribuir ou trabalhar com arquivos `.clas
 
 `mvn package`
 
-O `goal jar`  compilará seu código Java, executará quaisquer testes e terminará empacotando o código em um arquivo JAR dentro do diretório de destino. O nome do arquivo JAR será baseado no <artifactId> e <version> do projeto. Por exemplo, considerando o arquivo pom.xml mínimo criado anteriormente, o arquivo JAR será denominado primo-0.0.1-SNAPSHOT.jar.
+O `goal package`  compilará seu código Java, executará quaisquer testes e terminará empacotando o código em um arquivo JAR dentro do diretório de destino. O nome do arquivo JAR será baseado no <artifactId> e <version> do projeto. Por exemplo, considerando o arquivo pom.xml mínimo criado anteriormente, o arquivo JAR será denominado `primo-0.0.1-SNAPSHOT.jar` .
