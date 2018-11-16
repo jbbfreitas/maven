@@ -159,3 +159,103 @@ Como é improvável que você queira distribuir ou trabalhar com arquivos `.clas
 `mvn package`
 
 O `goal package`  compilará seu código Java, executará quaisquer testes e terminará empacotando o código em um arquivo JAR dentro do diretório de destino. O nome do arquivo JAR será baseado no <artifactId> e <version> do projeto. Por exemplo, considerando o arquivo pom.xml mínimo criado anteriormente, o arquivo JAR será denominado `primo-0.0.1-SNAPSHOT.jar` .
+	
+	
+#### Declare as Dependencias
+
+O exemplo simples do `HelloWorld.java` é completamente autônomo e não depende de nenhuma biblioteca adicional. A maioria dos aplicativos, no entanto, depende de bibliotecas externas para lidar com funcionalidades comuns e complexas.
+
+Por exemplo, suponha que, além de dizer "Hello World!", Você queira que o aplicativo imprima a data e a hora atuais. Embora você possa usar os recursos de data e hora nas bibliotecas Java nativas, é possível tornar as coisas mais interessantes usando as bibliotecas do Joda Time.
+
+Primeiro, mude o `HelloWorld.java` para ficar assim:
+
+```Java
+package br.com.abim.primo.main;
+
+import br.com.abim.primo.domain.Greeter;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		Greeter greeter = new Greeter();
+		System.out.println(greeter.sayHello());
+		System.out.println(greeter.showLocalTime());		
+	}	
+}
+```
+Em seguida, altere a classe `Greeter.java` para ficar assim:
+
+```Java
+package br.com.abim.primo.domain;
+
+import org.joda.time.LocalTime;
+
+public class Greeter {
+	public String sayHello() {
+		return "Hello world! How are you?";
+	}
+
+	public String showLocalTime() {
+		LocalTime currentTime = new LocalTime();
+		return "The current local time is: " + currentTime;
+	}
+}
+
+```
+Aqui, a classe `HelloWorld.java` usa a classe `LocalTime` da biblioteca `org.joda.time` para obter e imprimir a hora atual.
+
+Se você fosse executar o `mvn compile` para criar o projeto agora, a compilação *falharia* porque você não declarou o Joda Time como uma dependência de compilação no `pom.xml`. Você pode corrigir isso adicionando as seguintes linhas ao `pom.xml` (dentro do elemento <project>):
+
+```xml
+	<dependencies>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+	</dependencies>
+```
+Agora, se você executar o pacote `mvn compile`  ou `mvn package`, o Maven deve resolver a dependência do Joda Time do repositório do Maven Central e a compilação será bem-sucedida.
+
+
+#### Escrevendo um teste unirário
+
+Primeiro adicione o JUnit como uma dependência ao seu `pom.xml`, com escopo do teste. Agora as dependências ficarão assim:
+```XML
+	<dependencies>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+```
+Em seguida, crie um caso de teste como este:
+
+`src/test/br/com/abim/primojava/HelloWorldTest.java`
+
+```
+package br.com.abim.primo;
+
+import br.com.abim.primo.domain.Greeter;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class HelloWorldTest {
+
+	private Greeter greeter = new Greeter();
+
+	@Test
+	public void greeterSaysHello() {
+		assertThat(greeter.sayHello(), containsString("Hello"));
+	}
+
+}
+```
