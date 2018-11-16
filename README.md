@@ -90,7 +90,7 @@ OS name: "mac os x", version: "10.14", arch: "x86_64", family: "mac"
 
 Agora que o Maven está instalado, você precisa criar uma definição de projeto Maven. Os projetos do Maven são definidos com um arquivo XML chamado pom.xml. Entre outras coisas, esse arquivo fornece o nome, a versão e as dependências do projeto em bibliotecas externas.
 
-Crie um arquivo chamado pom.xml na raiz do projeto (ou seja, coloque-o diretamente na pasta src) e forneça o seguinte conteúdo:
+Crie um arquivo chamado pom.xml na raiz do projeto (ou seja, coloque-o  na mesma pasta onde está a pasta src) e forneça o seguinte conteúdo:
 
 ``` pom.xml ```
 
@@ -102,7 +102,7 @@ Crie um arquivo chamado pom.xml na raiz do projeto (ou seja, coloque-o diretamen
 
 	<groupId>br.com.abim</groupId>
 	<artifactId>primo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>primo</name>
@@ -144,3 +144,18 @@ Crie um arquivo chamado pom.xml na raiz do projeto (ou seja, coloque-o diretamen
 
 
 ```
+#### Construa código Java
+
+O Maven está agora pronto para construir o projeto. Você pode executar várias `'goals'` de ciclo de vida de construção com o Maven agora, incluindo  compilar o código do projeto, criar um pacote de biblioteca (como um arquivo JAR) e instalar a biblioteca no repositório de dependência local do Maven.
+
+Para experimentar a compilação, digite o seguinte na linha de comando:
+
+`mvn compile`
+
+Esse comando irá executar o Maven, dizendo para executar o `goal` de compilação. Quando terminar, você deverá encontrar os arquivos .class compilados no diretório `target/classes`.
+
+Como é improvável que você queira distribuir ou trabalhar com arquivos `.class` diretamente, provavelmente você desejará executar o `goal` que gera o `jar`:
+
+`mvn package`
+
+O `goal jar`  compilará seu código Java, executará quaisquer testes e terminará empacotando o código em um arquivo JAR dentro do diretório de destino. O nome do arquivo JAR será baseado no <artifactId> e <version> do projeto. Por exemplo, considerando o arquivo pom.xml mínimo criado anteriormente, o arquivo JAR será denominado primo-0.0.1-SNAPSHOT.jar.
