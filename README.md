@@ -34,23 +34,9 @@ No diretorio GrupoDeEstudo/Maven/PrimoMaven, crie a seguinte estrutura de subdir
                 └──com
                    └──abim
                       └──primo
-                         └──main
+			 └──domain
+                         
 ```                         
-
-Dentro da pasta `src/main/java/br/com/abim/primo/main` , crie a classe  `HelloWorld.java`
-
-
-
-```Java
-package br.com.abim.primo.main;
-
-public class HelloWorld {
-    public static void main(String[] args) {
-        Greeter greeter = new Greeter();
-        System.out.println(greeter.sayHello());
-    }
-}
-
 ```
 Dentro da pasta `src/main/java/br/com/abim/primo/domain` , crie a classe  `Greeter.java`
 
@@ -64,6 +50,38 @@ public class Greeter {
     }
 }
 ```
+
+```
+└── src
+    └── main
+        └── java
+            └── br
+                └──com
+                   └──abim
+                      └──primo
+			 └──main
+                         
+```                         
+
+Dentro da pasta `src/main/java/br/com/abim/primo/main` , crie a classe  `HelloWorld.java`
+
+
+
+```Java
+package br.com.abim.primo.main;
+
+import br.com.abim.primo.domain.Greeter;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		Greeter greeter = new Greeter();
+		System.out.println(greeter.sayHello());
+		System.out.println(greeter.showLocalTime());
+		
+	}
+	
+}
 
 #### Instalar e testar o Maven
 
