@@ -36,8 +36,9 @@ No diretorio GrupoDeEstudo/Maven/PrimoMaven, crie a seguinte estrutura de subdir
                       └──primo
 			 └──domain
                          
-```                         
-```
+```  
+
+
 Dentro da pasta `src/main/java/br/com/abim/primo/domain` , crie a classe  `Greeter.java`
 
 
