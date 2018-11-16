@@ -164,7 +164,7 @@ Crie um arquivo chamado pom.xml na raiz do projeto (ou seja, coloque-o  na mesma
 ```
 #### Construa código Java
 
-O Maven está agora pronto para construir o projeto. Você pode executar várias `'goals'` de ciclo de vida de construção com o Maven agora, incluindo  compilar o código do projeto, criar um pacote de biblioteca (como um arquivo JAR) e instalar a biblioteca no repositório de dependência local do Maven.
+O Maven está  pronto para construir o projeto! Você pode executar vários `'goals'` do ciclo de vida de construção do Maven.  Esses `goals` incluem:  compilar o código do projeto, criar um pacote JAR ou instalar o pacote no repositório de dependência local do Maven (arquivo .m2).
 
 Para experimentar a compilação, digite o seguinte na linha de comando:
 
