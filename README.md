@@ -284,7 +284,7 @@ O Maven usa um plugin chamado "surefire" para executar testes de unidade. A conf
 
 ou apenas usando `mvn package` como já mostramos acima (existe uma definição de ciclo de vida em que "test" é incluído como um estágio em "package").
 
-#### Desafio 
+#### Desafio :innocent:
 
 ```
 
