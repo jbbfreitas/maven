@@ -104,7 +104,7 @@ OS name: "mac os x", version: "10.14", arch: "x86_64", family: "mac"
 
 ```
 
-#### Definir uma construção simples do Maven
+#### Definir um `build``` simples do Maven
 
 Agora que o Maven está instalado, você precisa criar uma definição de projeto Maven. Os projetos do Maven são definidos com um arquivo XML chamado pom.xml. Entre outras coisas, esse arquivo fornece o nome, a versão e as dependências do projeto em bibliotecas externas.
 
