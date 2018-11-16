@@ -1,5 +1,5 @@
 
-# Criando projeto Java com Maven
+# Criando projeto Java com o Apache Maven
 
 Este guia ajuda você a usar o Maven para criar um projeto Java simples.
 O que você vai construir:
@@ -38,7 +38,7 @@ Dentro da pasta `src/main/java/hello` , você pode criar qualquer classe java.
 Para manter a consistência desse guia, crie duas classes: `HelloWorld.java` and `Greeter.java` .
 
 
-```
+```Java
 package br.com.abim.main;
 
 public class HelloWorld {
@@ -50,7 +50,7 @@ public class HelloWorld {
 
 ```
 
-```java
+```Java
 package br.com.abim.domain;
 
 public class Greeter {
@@ -63,4 +63,8 @@ public class Greeter {
 #### Instalar e testar o Maven
 
 
+O Maven pode ser baixado como um arquivo zip em http://maven.apache.org/download.cgi. Apenas os binários são necessários, então procure pelo link para apache-maven- {version} -bin.zip ou apache-maven- {version} -bin.tar.gz.
 
+Depois de ter baixado o arquivo zip, descompacte-o no seu computador. Em seguida, adicione a pasta bin ao seu caminho.
+
+Para testar a instalação do Maven, execute o mvn na linha de comando:
