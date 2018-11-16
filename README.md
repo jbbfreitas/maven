@@ -24,18 +24,22 @@ Crie a estrutura de diretórios
 No diretoria GrupoDeEstudo/Maven/PrimoMave, crie a seguinte estrutura de subdiretórios: 
 
 
-> mkdir -p src/main/java/hello
+> mkdir -p src/main/java/br/com/abim/primo
 
  em sistemas * nix:
 
 └── src
     └── main
         └── java
-            └── hello
+            └── br
+                └──com
+                   └──abim
+                      └──primo
+                         └──main
+                         
 
-Dentro da pasta `src/main/java/hello` , você pode criar qualquer classe java. 
+Dentro da pasta `src/main/java/br/com/abim/primo/main` , crie a classe  `HelloWorld.java`
 
-Para manter a consistência desse guia, crie duas classes: `HelloWorld.java` and `Greeter.java` .
 
 
 ```Java
@@ -49,6 +53,8 @@ public class HelloWorld {
 }
 
 ```
+Dentro da pasta `src/main/java/br/com/abim/primo/domain` , crie a classe  `Greeter.java`
+
 
 ```Java
 package br.com.abim.domain;
@@ -88,3 +94,53 @@ Crie um arquivo chamado pom.xml na raiz do projeto (ou seja, coloque-o diretamen
 
 ``` pom.xml ```
 
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.abim</groupId>
+	<artifactId>primo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>primo</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>br.com.abim.primo.main.HelloWorld</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	
+</project>
+
+
+```
