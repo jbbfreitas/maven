@@ -259,3 +259,18 @@ public class HelloWorldTest {
 
 }
 ```
+
+O Maven usa um plugin chamado "surefire" para executar testes de unidade. A configuração padrão deste plugin compila e executa todas as classes em `src/test/java`  com um nome correspondente a `*Test` (que termina com a palavra Test). Você pode executar os testes na linha de comando assim:
+
+ ```mvn test```
+
+ou apenas usando `mvn package` como já mostramos acima (existe uma definição de ciclo de vida em que "test" é incluído como um estágio em "package").
+
+#### Desafio 
+
+```
+
+Crie um segundo teste unitário para o método showLocalTime()
+
+
+```
