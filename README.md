@@ -18,8 +18,7 @@ Você criará um aplicativo que fornece a hora do dia e, em seguida, o cria com 
 
 #### Configurar o projeto
 
-Primeiro, você precisa configurar um projeto Java para o Maven. Para manter o foco no Maven, torne o projeto o mais simples possível por enquanto. Crie essa estrutura em uma pasta de projeto de sua escolha.
-Crie a estrutura de diretórios
+Primeiro, você precisa configurar um projeto Java para o Maven. Para manter o foco no Maven, torne o projeto o mais simples possível por enquanto. Crie a seguint estrutura de diretórios
 
 No diretoria GrupoDeEstudo/Maven/PrimoMave, crie a seguinte estrutura de subdiretórios: 
 
@@ -27,7 +26,7 @@ No diretoria GrupoDeEstudo/Maven/PrimoMave, crie a seguinte estrutura de subdire
 > mkdir -p src/main/java/br/com/abim/primo
 
  em sistemas * nix:
-
+```
 └── src
     └── main
         └── java
@@ -36,14 +35,14 @@ No diretoria GrupoDeEstudo/Maven/PrimoMave, crie a seguinte estrutura de subdire
                    └──abim
                       └──primo
                          └──main
-                         
+```                         
 
 Dentro da pasta `src/main/java/br/com/abim/primo/main` , crie a classe  `HelloWorld.java`
 
 
 
 ```Java
-package br.com.abim.main;
+package br.com.abim.primo.main;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -57,7 +56,7 @@ Dentro da pasta `src/main/java/br/com/abim/primo/domain` , crie a classe  `Greet
 
 
 ```Java
-package br.com.abim.domain;
+package br.com.abim.primo.domain;
 
 public class Greeter {
     public String sayHello() {
