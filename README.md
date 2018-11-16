@@ -20,7 +20,7 @@ Você criará um aplicativo que fornece a hora do dia e, em seguida, o cria com 
 
 Primeiro, você precisa configurar um projeto Java para o Maven. Para manter o foco no Maven, torne o projeto o mais simples possível por enquanto. Crie a seguint estrutura de diretórios
 
-No diretoria GrupoDeEstudo/Maven/PrimoMave, crie a seguinte estrutura de subdiretórios: 
+No diretorio GrupoDeEstudo/Maven/PrimoMaven, crie a seguinte estrutura de subdiretórios: 
 
 
 > mkdir -p src/main/java/br/com/abim/primo
