@@ -1,5 +1,22 @@
+# Apache Maven
 
-# Criando projeto Java com o Apache Maven
+Fundamentalmente, o Maven é uma ferramenta desenvolvida em Java pelo projeto Apache para o gerenciamento e automação do processo de construção (build) de projetos. 
+
+Ao fornecer diversas funcionalidades adicionais através do uso de `plugins` bem como ao estimular o emprego de melhores práticas de como organizar,  e manter projetos, o Maven é considerado muito mais do que apenas uma ferramenta de build.
+
+O uso do Maven traz diversos benefícios:
+- Simplificação na configuração dos projetos seguindo as melhores práticas;
+- Uso consistente em todos os projetos, com curva de aprendizado suave;
+- Gerenciamento de dependências, incluindo atualização automática e dependência transitiva
+- Possibilidade de trabalhar com vários projetos ao mesmo tempo;
+- Um grande quantidade de repositórios de bibliotecas
+- Acesso instantâneo a novos recursos com pouca ou nenhuma configuração extraven
+- Construções baseadas em modelo: JAR, WAR, EAR;
+- Maven pode gerar um site ou PDF incluindo qualquer documentação que você queira adicionar; 
+- Publicação de gerenciamento de liberação e distribuição, integrando ao seu sistema de controle de SCM (como o Subversion ou o Git);
+- Gerenciamento de dependências: o Maven incentiva o uso de um repositório central de JARs e outras dependências. 
+
+## Criando um projeto Java com o Maven
 
 Este guia ajuda você a usar o Maven para criar um projeto Java simples.
 
