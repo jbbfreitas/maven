@@ -2,12 +2,13 @@
 # Criando projeto Java com o Apache Maven
 
 Este guia ajuda você a usar o Maven para criar um projeto Java simples.
+
 O que você vai construir:
 
-Você criará um aplicativo que fornece a hora do dia e, em seguida, o cria com o Maven.
+Com a ajuda do Maven, você criará um aplicativo que dá as boas vindas e em seguida fornece a hora do dia .
 
 ### O que você precisará
- - 15 minutes
+ - 15 minutos
 
  - Eclipse
 
@@ -18,9 +19,9 @@ Você criará um aplicativo que fornece a hora do dia e, em seguida, o cria com 
 
 #### Configurar o projeto
 
-Primeiro, você precisa configurar um projeto Java para o Maven. Para manter o foco no Maven, torne o projeto o mais simples possível por enquanto. Crie a seguint estrutura de diretórios
+Primeiro, você precisa configurar um projeto Java para usar o Maven. Para manter o foco no Maven, tornaremos o projeto o mais simples possível por enquanto. Crie a seguint estrutura de diretórios
 
-No diretorio GrupoDeEstudo/Maven/Primo, crie a seguinte estrutura de subdiretórios: 
+No diretorio GrupoDeEstudo/Maven/primeiroMaven, crie a seguinte estrutura de subdiretórios: 
 
 
 `mkdir -p src/main/java/br/com/abim/primo/domain` em sistemas `*nix`:
@@ -104,9 +105,9 @@ OS name: "mac os x", version: "10.14", arch: "x86_64", family: "mac"
 
 #### Definir um `build`  simples do Maven
 
-Agora que o Maven está instalado, você precisa criar uma definição de projeto Maven. Os projetos do Maven são definidos com um arquivo XML chamado pom.xml. Entre outras coisas, esse arquivo fornece o nome, a versão e as dependências do projeto em bibliotecas externas.
+Agora que o Maven está instalado, você precisa criar uma definição de projeto Maven. Os projetos do Maven são definidos com um arquivo XML chamado `pom.xml`. Entre outras coisas, esse arquivo fornece o nome, a versão e as dependências do projeto em relação à bibliotecas externas.
 
-Crie um arquivo chamado pom.xml na raiz do projeto (ou seja, coloque-o  na mesma pasta onde está a pasta src) e forneça o seguinte conteúdo:
+Crie um arquivo chamado `pom.xml` na raiz do projeto (ou seja, coloque-o  na mesma pasta onde está a pasta src) e forneça o seguinte conteúdo:
 
 ``` pom.xml ```
 
@@ -174,14 +175,14 @@ Como é improvável que você queira distribuir ou trabalhar com arquivos `.clas
 
 `mvn package`
 
-O `goal package`  compilará seu código Java, executará quaisquer testes e terminará empacotando o código em um arquivo JAR dentro do diretório de destino. O nome do arquivo JAR será baseado no <artifactId> e <version> do projeto. Por exemplo, considerando o arquivo pom.xml mínimo criado anteriormente, o arquivo JAR será denominado `primo-0.0.1-SNAPSHOT.jar` .
+O `goal package`  compilará seu código Java, executará quaisquer testes e terminará empacotando o código em um arquivo JAR dentro do diretório de destino (`target`). O nome do arquivo JAR será baseado no <artifactId> e <version> do projeto. Por exemplo, considerando o arquivo `pom.xml` mínimo criado anteriormente, o arquivo JAR será denominado `primo-0.0.1-SNAPSHOT.jar` .
 	
 	
 #### Declare as Dependencias
 
 O exemplo simples do `HelloWorld.java` é completamente autônomo e não depende de nenhuma biblioteca adicional. A maioria dos aplicativos, no entanto, depende de bibliotecas externas para lidar com funcionalidades comuns e complexas.
 
-Por exemplo, suponha que, além de dizer "Hello World!", Você queira que o aplicativo imprima a data e a hora atuais. Embora você possa usar os recursos de data e hora nas bibliotecas Java nativas, é possível tornar as coisas mais interessantes usando as bibliotecas do Joda Time.
+Por exemplo, suponha que, além de dizer "Hello World!", Você queira que o aplicativo mostre a data e a hora atuais. Embora você possa usar os recursos de data e hora nas bibliotecas Java nativas, é possível tornar as coisas mais interessantes usando as bibliotecas do Joda Time.
 
 Primeiro, mude o `HelloWorld.java` para ficar assim:
 
@@ -218,7 +219,7 @@ public class Greeter {
 }
 
 ```
-Aqui, a classe `HelloWorld.java` usa a classe `LocalTime` da biblioteca `org.joda.time` para obter e imprimir a hora atual.
+Aqui, a classe `HelloWorld.java` usa a classe `LocalTime` da biblioteca `org.joda.time` para obter e mostrar hora atual.
 
 Se você fosse executar o `mvn compile` para criar o projeto agora, a compilação *falharia* porque você não declarou o Joda Time como uma dependência de compilação no `pom.xml`. Você pode corrigir isso adicionando as seguintes linhas ao `pom.xml` (dentro do elemento <project>):
 
