@@ -1,12 +1,11 @@
 package br.com.abim.primo;
 
-import br.com.abim.primo.domain.Greeter;
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.*;
-
-
+import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
+
+import br.com.abim.primo.domain.Greeter;
 
 public class HelloWorldTest {
 
@@ -21,6 +20,6 @@ public class HelloWorldTest {
 	public void greeterShowLocalTime() {
 		assertThat(greeter.showLocalTime(), containsString("The current"));
 	}
-	
+
 	
 }
