@@ -123,7 +123,7 @@ Se você quiser atualizar o brew:
 ```python
 brew update
 ```
-Para saber mais sobre o [brew] (https://brew.sh)
+Para saber mais sobre o (brew)[https://brew.sh]
 
 Para testar a instalação do Maven, execute o mvn na linha de comando:
 
