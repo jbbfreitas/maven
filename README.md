@@ -107,6 +107,24 @@ O Maven pode ser baixado como um arquivo zip em http://maven.apache.org/download
 
 Depois de ter baixado o arquivo zip, descompacte-o no seu computador. Em seguida, adicione a pasta bin ao seu caminho.
 
+Para usuário do Mac a instalação poderá ser feita usando o `brew`
+
+```python
+brew install maven
+```
+
+Se você não possui o brew instalado:
+
+```python
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+Se você quiser atualizar o brew:
+
+```python
+brew update
+```
+Para saber mais sobre o [brew] (https://brew.sh)
+
 Para testar a instalação do Maven, execute o mvn na linha de comando:
 
 ``` mvn -v ```

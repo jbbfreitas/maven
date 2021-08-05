@@ -4,7 +4,7 @@ import org.joda.time.LocalTime;
 
 public class Greeter {
 	public String sayHello() {
-		return "Hello world! How are you?";
+		return "Olá como vai você?";
 	}
 
 	public String showLocalTime() {
